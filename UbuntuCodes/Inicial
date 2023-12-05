@@ -30,6 +30,12 @@ wget https://raw.githubusercontent.com/alura-cursos/Pipeline-de-dados-combinando
 #Fazendo donwload dos dados no diretorio data_raw - dados referente aempresa B em modelo CSV
 wget https://raw.githubusercontent.com/alura-cursos/Pipeline-de-dados-combinando-Python-e-orientcao-a-objeto/main/data_raw/dados_empresaB.csv
 
+#Acessando o vs code pelo ubuntu 
+code .
+
+#extensões instaladas diretamente no vs code
+jupyter
+python
 
 
 #Criação do ambiente virtual
