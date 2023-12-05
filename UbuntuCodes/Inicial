@@ -18,6 +18,19 @@ sudo apt install python3-venv -y
 #Criando pasta do projeto e acessando ela
 mkdir projeto_Requests
 cd projeto_Requests
+mkdir data_raw
+mkdir data_processed
+mkdir notebooks
+mkdir scripts
+cd data_raw
+
+#Fazendo donwload dos dados no diretorio data_raw - dados referente aempresa A em modelo JSON
+wget https://raw.githubusercontent.com/alura-cursos/Pipeline-de-dados-combinando-Python-e-orientcao-a-objeto/main/data_raw/dados_empresaA.json
+
+#Fazendo donwload dos dados no diretorio data_raw - dados referente aempresa B em modelo CSV
+wget https://raw.githubusercontent.com/alura-cursos/Pipeline-de-dados-combinando-Python-e-orientcao-a-objeto/main/data_raw/dados_empresaB.csv
+
+
 
 #Criação do ambiente virtual
 python3 -m venv venv
