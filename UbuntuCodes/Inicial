@@ -40,13 +40,17 @@ python
 
 #Criação do ambiente virtual
 python3 -m venv venv
+ou
+python3 -m venv .venv     #Para criar a pasta de venv e deixar oculta
+
 
 #Ativando o ambiente virtual
-source venv/bin/activate
+source .venv/bin/activate
 
 #Instalando bibliotecas no ambiente
 pip install requests==2.28.2
 pip install pandas==2.0.0
+pip install notebook==7.0.3
 
 
 
