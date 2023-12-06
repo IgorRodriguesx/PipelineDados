@@ -19,4 +19,4 @@ with open(path_json, 'r') as file:
     dados_json = json.load(file)
 
 # dados representados em formato lista ficando manipulavel
-dados_json[0]
+dados_json[1]
