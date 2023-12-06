@@ -9,3 +9,14 @@ with open(path_json, 'r') as file:
 
 with open(path_json, 'r') as file:
     dados = file.readline()   
+
+# Formato String não fica manipulavel 
+
+import Json
+
+# Ler arquivo  e identificar a estrutura com o 'json.load' salvando na variavel 'dados_json'
+with open(path_json, 'r') as file:
+    dados_json = json.load(file)
+
+# dados representados em formato lista ficando manipulavel
+dados_json[0]
