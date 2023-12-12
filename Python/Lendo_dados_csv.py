@@ -30,5 +30,25 @@ with open(path_csv , 'r') as file:
         dados_csv.append(row)     # atribuir valores na lista com método 'append' salvando cada linha
         #print(row)
 
+# DictReader retorna uma estrutura de dicionários
+dados_csv = []
+with open(path_csv , 'r') as file:
+    spamreader= csv.DictReader(file, delimiter=',')
+    for row in spamreader:     
+        dados_csv.append(row)
 
-  
+# Agora dados_csv e dados_json possuem a mesma estrutura de dicionários
+
+  dados_csv[0]
+  {'Nome do Item': 'Lápis de sobrancelha',
+ 'Classificação do Produto': 'Roupas',
+ 'Valor em Reais (R$)': '55.17',
+ 'Quantidade em Estoque': '62',
+ 'Nome da Loja': 'Filial 1',
+ 'Data da Venda': '2023-04-13 18:58:06.794203'}
+dados_json[0]
+{'Nome do Produto': 'Blush em pó',
+ 'Categoria do Produto': 'Eletrodomésticos',
+ 'Preço do Produto (R$)': 79.41,
+ 'Quantidade em Estoque': 7,
+ 'Filial': 'Filial 7'}
