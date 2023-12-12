@@ -38,6 +38,7 @@ with open(path_csv , 'r') as file:
         dados_csv.append(row)
 
 # Agora dados_csv e dados_json possuem a mesma estrutura de dicionários
+# dados agora compatíveis para poder chegar no objetivo final que será unir os dados
 
   dados_csv[0]
   {'Nome do Item': 'Lápis de sobrancelha',
