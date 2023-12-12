@@ -1,3 +1,4 @@
+# Método .keys() utilizado para visualizar as chaves no dicionário
 # Atribuindo uma variável e analisando dados Json
 nome_colunas_json = list(dados_json[0].keys())
 nome_colunas_json
