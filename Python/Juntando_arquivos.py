@@ -19,3 +19,5 @@ combined_list.extend(new_dados_csv)
 # verificando como ficou a nová varialvel que recebeu os dados dos dois arquivos
 len(combined_list)
 4446
+
+
