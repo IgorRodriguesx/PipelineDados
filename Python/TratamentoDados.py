@@ -24,3 +24,18 @@ nomes_colunas
 # lista de listas
 # Primeiro registro será o nome das colunas
 dados_combinados_tabela = [nomes_colunas]
+
+# trazendo dados da variavel combined_list
+for row in combined_list:
+    # Zerando a linha
+    linha = []
+    # Criando a lista novamente
+    for coluna in nomes_colunas:
+        linha.append(row.get(coluna, 'Indisponível'))
+    dados_combinados_tabela.append(linha)    
+
+
+# TRANSFORMADA OS DADOS EM UMA LISTA DE LISTAS (TABELA) PARA SALVAR NO MOLDE CSV
+
+
+
