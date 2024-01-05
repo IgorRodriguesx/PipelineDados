@@ -38,4 +38,10 @@ for row in combined_list:
 # TRANSFORMADA OS DADOS EM UMA LISTA DE LISTAS (TABELA) PARA SALVAR NO MOLDE CSV
 
 
+path_dados_combinados = '../data_processed/dados_combinados.csv'
+
+with open(path_dados_combinados, 'w') as file:
+    writer = csv.writer(file)
+    writer.writerows(dados_combinados_tabela)
+
 
