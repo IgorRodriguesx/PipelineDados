@@ -17,6 +17,15 @@ def leitura_csv(path_csv):
             dados_csv.append(row)    
     return dados_csv
 
+def leitura_dados(path, tipo_arquivo):
+    if tipo_arquivo == 'csv':
+        dados = leitura_csv(path)
+
+    elif tipo_arquivo == 'json':
+        dados = leitura_json(path)
+
+    return dados    
+
 # Puxando os locais dos arquivos
 path_json = 'projeto_Requests/data_raw/dados_empresaA.json'
 path_csv = 'projeto_Requests/data_raw/dados_empresaB.csv'
