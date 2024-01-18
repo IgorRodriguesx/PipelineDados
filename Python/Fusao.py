@@ -18,7 +18,7 @@ def leitura_csv(path_csv):
     
     return dados_csv
 
-def leitura_dados(path, tipo_arquivo):
+def leitura_dados(path, tipo_arquivo): # Parametros da função (path , tipo_arquivo)
     dados = []
     # Condicional verificando tipo do arquivo
     if tipo_arquivo == 'csv':
