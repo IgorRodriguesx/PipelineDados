@@ -32,6 +32,18 @@ def leitura_dados(path, tipo_arquivo):
 def get_columns(dados):
     return list(dados[0].keys())
 
+def rename_columns(dados, key_mapping):
+    new_dados_csv = []
+    
+    # Para cada registro na variável dados_csv
+    for old_dict in dados_csv:
+        dict_temp = {}
+        for old_key , value in old_dict.items():
+            dict_temp[key_mapping[old_key]] = value
+            new_dados_csv.append(dict_temp)
+
+    return new_dados_csv
+
 
 # Puxando os locais dos arquivos
 path_json = 'projeto_Requests/data_raw/dados_empresaA.json'
@@ -40,7 +52,7 @@ path_csv = 'projeto_Requests/data_raw/dados_empresaB.csv'
 # Leitura dos dados Json e Csv
 dados_json = leitura_dados(path_json, 'json')
 nome_colunas_json = get_columns(dados_json)
-print(nome_colunas_json)
+print(f"Nome colunas dados Json: {nome_colunas_json}")
 
 dados_csv = leitura_dados(path_csv, 'csv')
 nome_colunas_csv = get_columns(dados_csv)
@@ -55,12 +67,6 @@ key_mapping = {'Nome do Item' : 'Nome do Produto',
 
 # Transformação dos dados
 
-def rename_columns(dados, key_mapping):
-    new_dados_csv = []
-    
-    # Para cada registro na variável dados_csv
-    for old_dict in dados_csv:
-        dict_temp = {}
-        for old_key , value in old_dict.items():
-            dict_temp[key_mapping[old_key]] = value
-        new_dados_csv.[0]
+dados_csv = rename_columns(dados_csv, key_mapping)
+nome_colunas_csv = get_columns(dados_csv)
+print(nome_colunas_csv)
