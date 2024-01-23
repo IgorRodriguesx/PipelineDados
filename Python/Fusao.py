@@ -70,6 +70,8 @@ tamanho_dados_csv = size_data(dados_csv)
 print(f"Nome colunas dados csv: {nome_colunas_csv}")
 print(f"tamanho dos dados json:{tamanho_dados_csv}")
 
+# Transformação dos dados
+
 key_mapping = {'Nome do Item' : 'Nome do Produto',
                 'Valor em Reais (R$)': 'Preço do Produto (R$)',
                'Classificação do Produto': 'Categoria do Produto',
@@ -77,10 +79,12 @@ key_mapping = {'Nome do Item' : 'Nome do Produto',
                 'Nome da Loja': 'Filial',
                 'Data da Venda': 'Data da Venda'}
 
-# Transformação dos dados
-
 dados_csv = rename_columns(dados_csv, key_mapping)
 nome_colunas_csv = get_columns(dados_csv)
 print(nome_colunas_csv)
 
-dados_fusão = join(dados_json, dados_csv)
+dados_fusao = join(dados_json, dados_csv)
+nome_colunas_fusao = get_columns(dados_fusao)
+tamanho_dados_fusao = size_data(dados_fusao)
+print(nome_colunas_fusao)
+print(tamanho_dados_fusao)
