@@ -29,7 +29,7 @@ def leitura_dados(path, tipo_arquivo):
     return dados    
 
 def get_columns(dados):
-    return list(dados[0].keys())
+    return list(dados[-1].keys())
 
 def rename_columns(dados, key_mapping):
     new_dados_csv = []
@@ -52,6 +52,18 @@ def join(dadosA, dadosB):
     combined_list.extend(dadosB)
     return combined_list
 
+def transformando_dados_tabela(dados, nomes_colunas):
+    dados_combinados_tabela = [nome_colunas]
+
+    for row in combined_list:
+        linha = []
+        for coluna in nomes_colunas:
+            linha.append(row.get(coluna, 'indisponível'))
+        dados_combinados_tabela.append(linha)
+     
+    return dados_combinados_tabela 
+
+
 # Puxando os locais dos arquivos
 path_json = 'projeto_Requests/data_raw/dados_empresaA.json'
 path_csv = 'projeto_Requests/data_raw/dados_empresaB.csv'
@@ -68,7 +80,7 @@ dados_csv = leitura_dados(path_csv, 'csv')
 nome_colunas_csv = get_columns(dados_csv)
 tamanho_dados_csv = size_data(dados_csv)
 print(f"Nome colunas dados csv: {nome_colunas_csv}")
-print(f"tamanho dos dados json:{tamanho_dados_csv}")
+print(f"tamanho dos dados csv:{tamanho_dados_csv}")
 
 # Transformação dos dados
 
@@ -88,3 +100,6 @@ nome_colunas_fusao = get_columns(dados_fusao)
 tamanho_dados_fusao = size_data(dados_fusao)
 print(nome_colunas_fusao)
 print(tamanho_dados_fusao)
+
+# Salvando dados
+
