@@ -63,6 +63,10 @@ def transformando_dados_tabela(dados, nomes_colunas):
      
     return dados_combinados_tabela 
 
+def salvando_dados(dados, path)
+    with open(path, 'w') as file:
+        writer = csv.writer(file)
+        writer.writerows(dados_combinados_tabela)
 
 # Puxando os locais dos arquivos
 path_json = 'projeto_Requests/data_raw/dados_empresaA.json'
@@ -103,3 +107,8 @@ print(tamanho_dados_fusao)
 
 # Salvando dados
 
+dados_fusao_tabela = transformando_dados_tabela(dados_fusao, nome_colunas_fusao)
+
+path_dados_combinados = 'data_processed/dados_combinados.csv'
+
+salvando_dados()
