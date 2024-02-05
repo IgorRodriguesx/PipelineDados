@@ -53,9 +53,9 @@ def join(dadosA, dadosB):
     return combined_list
 
 def transformando_dados_tabela(dados, nomes_colunas):
-    dados_combinados_tabela = [nome_colunas]
+    dados_combinados_tabela = [nomes_colunas]
 
-    for row in combined_list:
+    for row in dados:
         linha = []
         for coluna in nomes_colunas:
             linha.append(row.get(coluna, 'indisponível'))
@@ -63,10 +63,10 @@ def transformando_dados_tabela(dados, nomes_colunas):
      
     return dados_combinados_tabela 
 
-def salvando_dados(dados, path)
+def salvando_dados(dados, path):
     with open(path, 'w') as file:
         writer = csv.writer(file)
-        writer.writerows(dados_combinados_tabela)
+        writer.writerows(dados)
 
 # Puxando os locais dos arquivos
 path_json = 'projeto_Requests/data_raw/dados_empresaA.json'
@@ -109,6 +109,8 @@ print(tamanho_dados_fusao)
 
 dados_fusao_tabela = transformando_dados_tabela(dados_fusao, nome_colunas_fusao)
 
-path_dados_combinados = 'data_processed/dados_combinados.csv'
+path_dados_combinados = 'projeto_Requests/data_processed/dados_combinados.csv'
 
-salvando_dados()
+salvando_dados(dados_fusao_tabela, path_dados_combinados)
+
+print(path_dados_combinados)
