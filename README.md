@@ -1,3 +1,3 @@
 # PipelineDados
 
-Projeto com a ideia de combinar dados distintos em um único escopo
+Projeto com o objetivo de combinar dados distintos em um único escopo
