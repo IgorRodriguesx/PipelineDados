@@ -3,7 +3,9 @@ import csv
 
 class Dados:
 
+    # Métodos
     def __init__(self, path, tipo_dados):
+        # Atributos
         self.path = path
         self.tipo_dados = tipo_dados
         self.dados = self.leitura_dados()
@@ -64,3 +66,22 @@ class Dados:
         combined_list.extend(dadosA.dados)
         combined_list.extend(dadosB.dados)
         return Dados(combined_list, 'list')
+    
+    def transformando_dados_tabela(self):
+        dados_combinados_tabela = [self.nome_colunas]
+
+        for row in self.dados:
+            linha = []
+            for coluna in self.nome_colunas:
+                linha.append(row.get(coluna, 'indisponível'))
+            dados_combinados_tabela.append(linha)
+        
+        return dados_combinados_tabela 
+    
+    def salvando_dados(self, path):
+
+        dados_combinados_tabela = self.transformando_dados_tabela()
+
+        with open(path, 'w') as file:
+            writer = csv.writer(file)
+            writer.writerows(dados_combinados_tabela)
